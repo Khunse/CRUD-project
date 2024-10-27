@@ -40,7 +40,6 @@ D:\assigments\IPAserver\obj\Release\net8.0\IPAserver.pdb
 D:\assigments\IPAserver\obj\Release\net8.0\IPAserver.genruntimeconfig.cache
 D:\assigments\IPAserver\obj\Release\net8.0\ref\IPAserver.dll
 D:\assigments\IPAserver\bin\Release\net8.0\dist\assets\index-B1bkrhzX.css
-D:\assigments\IPAserver\bin\Release\net8.0\dist\assets\index-C9jP-kq6.js
 D:\assigments\IPAserver\bin\Release\net8.0\dist\assets\InterVariable-CWi-zmRD.woff2
 D:\assigments\IPAserver\bin\Release\net8.0\dist\assets\InterVariable-Italic-d6KXgdvN.woff2
 D:\assigments\IPAserver\bin\Release\net8.0\dist\assets\primeicons-C6QP2o4f.woff2
@@ -49,3 +48,5 @@ D:\assigments\IPAserver\bin\Release\net8.0\dist\assets\primeicons-Dr5RGzOO.svg
 D:\assigments\IPAserver\bin\Release\net8.0\dist\assets\primeicons-MpK4pl85.ttf
 D:\assigments\IPAserver\bin\Release\net8.0\dist\assets\primeicons-WjwUDZjB.woff
 D:\assigments\IPAserver\bin\Release\net8.0\dist\index.html
+D:\assigments\IPAserver\bin\Release\net8.0\dist\assets\index-CB1WZBEg.js
+D:\assigments\IPAserver\obj\Release\net8.0\IPAserver.sourcelink.json

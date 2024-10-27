@@ -2,7 +2,7 @@ D:\assigments\IPAserver\publish\IPAserver.exe
 D:\assigments\IPAserver\publish\appsettings.Development.json
 D:\assigments\IPAserver\publish\appsettings.json
 D:\assigments\IPAserver\publish\dist\assets\index-B1bkrhzX.css
-D:\assigments\IPAserver\publish\dist\assets\index-C9jP-kq6.js
+D:\assigments\IPAserver\publish\dist\assets\index-CB1WZBEg.js
 D:\assigments\IPAserver\publish\dist\assets\InterVariable-CWi-zmRD.woff2
 D:\assigments\IPAserver\publish\dist\assets\InterVariable-Italic-d6KXgdvN.woff2
 D:\assigments\IPAserver\publish\dist\assets\primeicons-C6QP2o4f.woff2

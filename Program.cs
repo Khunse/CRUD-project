@@ -13,7 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ISQLDataAccess,SQLDataAccess>();
 builder.Services.AddControllers();
-
+builder.WebHost.UseUrls("http://0.0.0.0:5000");
 var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
 
 builder.Services.AddCors( options => {
