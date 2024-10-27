@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "eGkNSM/5VWL9xvqAPjuztQXS6f2gKcAuCOTnxAjH/yc=",
+  "Source": "IPAserver",
+  "BasePath": "_content/IPAserver",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

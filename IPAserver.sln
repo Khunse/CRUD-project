@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPAserver", "IPAserver.csproj", "{6FF0421B-38E2-49FA-8B3D-A7945BA3FD96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FF0421B-38E2-49FA-8B3D-A7945BA3FD96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FF0421B-38E2-49FA-8B3D-A7945BA3FD96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FF0421B-38E2-49FA-8B3D-A7945BA3FD96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FF0421B-38E2-49FA-8B3D-A7945BA3FD96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9ADC02A9-54BA-4441-9163-96993127572D}
+	EndGlobalSection
+EndGlobal

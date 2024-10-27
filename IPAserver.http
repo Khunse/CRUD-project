@@ -1,0 +1,6 @@
+@IPAserver_HostAddress = http://localhost:5268
+
+GET {{IPAserver_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
