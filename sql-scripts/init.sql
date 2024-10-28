@@ -11,6 +11,7 @@ GO
 CREATE TABLE [dbo].[Product](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[ProductName] [varchar](255) NOT NULL,
+    [ProductPrice]              DECIMAL (18)  CONSTRAINT [DEFAULT_Product_Price] DEFAULT 0 NOT NULL,
 	[Created_at] [datetime] NOT NULL,
 	[Updated_at] [datetime] NULL,
 	[ProductDescription] [varchar](255) NOT NULL,
