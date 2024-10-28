@@ -1,36 +1,83 @@
+# Project
 
-## dotnet .\publish\IPAserver.dll --urls=http://localhost:5268
+## Overview
+This project is a web application developed with ASP.NET on .NET 8, utilizing MSSQL server as the databse and Dapper to acceses Database. It is designed for simple CRUD operation for products.
+
+## Table of Contents
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Running the Project](#running-the-project)
+
+## Requirements
+- **.NET 8 SDK**
+- **MSSQL Server** (local or hosted instance)
+
+## Installation
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/Khunse/CRUD-project.git
+   cd CRUD-project
+   ```
+
+2. **Restore Dependencies**
+
+	```bash
+		dotnet restore
+	```
+
+3. **Build Project**
+
+	```bash
+		  dotnet build
+	```
 
 
+## Configuration
 
+1. **Run this Query in MSSQL Server**
 
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Product](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[ProductName] [varchar](255) NOT NULL,
-	[Created_at] [datetime] NOT NULL,
-	[Updated_at] [datetime] NULL,
-	[ProductDescription] [varchar](255) NOT NULL,
-	[IsDelete] [bit] NOT NULL,
- CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [dbo].[Product] ADD  CONSTRAINT [DEFAULT_Product_IsDelete]  DEFAULT ((0)) FOR [IsDelete]
-GO
+	```sql
+			CREATE DATABASE sampledb;
+			GO
 
-select name from sys.databases;
-select TABLE_NAME from INFORMATION_SCHEMA.TABLES where TABLE_TYPE='BASE TYPE';
+			USE sampledb;
+			GO
 
-docker run -d -p 5000:5000 --name my-app --network crudapp-network myappv2
+			SET ANSI_NULLS ON
+			GO
+			SET QUOTED_IDENTIFIER ON
+			GO
+			CREATE TABLE [dbo].[Product](
+				[Id] [bigint] IDENTITY(1,1) NOT NULL,
+				[ProductName] [varchar](255) NOT NULL,
+				[Created_at] [datetime] NOT NULL,
+				[Updated_at] [datetime] NULL,
+				[ProductDescription] [varchar](255) NOT NULL,
+				[IsDelete] [bit] NOT NULL,
+			CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
+			(
+				[Id] ASC
+			)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+			) ON [PRIMARY]
+			GO
+			ALTER TABLE [dbo].[Product] ADD  CONSTRAINT [DEFAULT_Product_IsDelete]  DEFAULT ((0)) FOR [IsDelete]
+			GO
+	```
 
-docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Khunaung123!" -e "MSSQL_PID=Express" -p 1437:1433 --name my-mssql -v /home/ec2-user/CRUD-project/sql-scripts:/sql-scripts -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+2. **Set Database connection in project's Appsetting.json**
 
-docker exec -it 39d8 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Khunaung123!
+	```json
+			"ConnectionStrings": {
+				"DefaultConnection": "Server=your_server_name;Database=your_database_name;User Id=your_user_id;Password=your_password;"
+				}
+	```
 
-docker exec -it 39d8 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Khunaung123! -i /sql-scripts/init.sql
+## Running The Project
+
+1. **Start the application**
+
+	```bash
+			dotnet run
+	```
