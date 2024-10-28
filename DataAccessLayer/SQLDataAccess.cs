@@ -71,6 +71,23 @@ public class SQLDataAccess : ISQLDataAccess
 
     }
 
+    public async Task<bool> CheckDuplicateProductNameEdit(string productName)
+    {
+            using IDbConnection dbConnection= new SqlConnection(_configuration.GetConnectionString("Default"));
+
+            string query = "SELECT * FROM Product WHERE ProductName=@ProductName and IsDelete=0";
+
+            var obj = new { ProductName = productName };
+
+            var queryData = await dbConnection.QueryAsync<Product>(query,obj);
+            var dataList = queryData.ToList();
+
+            if( dataList.Count > 0 ) return true;
+
+            return  false;
+
+    }
+
     public async Task<bool> DeleteProduct(long id)
     {
         using IDbConnection dbConnection= new SqlConnection(_configuration.GetConnectionString("Default"));

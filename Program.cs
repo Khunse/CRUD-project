@@ -123,7 +123,8 @@ app.MapPost("/products/{id}", async (ISQLDataAccess dataAccess,long id,Product p
 {   
     var respData = new RespModal();
     var checkData = await dataAccess.CheckDuplicateProductId(id);
-    var checkNameData = await dataAccess.CheckDuplicateProductName(product.ProductName);
+    var oldData = await dataAccess.GetProduct(id);
+    var checkNameData = product.ProductName.Equals(oldData.ProductName) ? false : await dataAccess.CheckDuplicateProductName(product.ProductName);
     
     if(checkData is true && checkNameData is false)
     {
