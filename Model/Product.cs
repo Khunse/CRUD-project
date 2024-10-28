@@ -8,6 +8,7 @@ public class Product
     public long Id { get; set; }
     public string ProductName { get; set; } = null!;
     public string ProductDescription { get; set;} = null!;
+    public decimal ProductPrice { get; set; }
     public DateTime Created_at { get; set; }
     public DateTime Updated_at { get; set; }
     public bool IsDelete { get; set; }

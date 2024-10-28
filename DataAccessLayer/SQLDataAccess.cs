@@ -18,7 +18,7 @@ public class SQLDataAccess : ISQLDataAccess
     {
         using IDbConnection dbConnection= new SqlConnection(_configuration.GetConnectionString("Default"));
 
-        string query = "INSERT INTO Product ( ProductName, ProductDescription,Created_at,IsDelete)  VALUES ( @ProductName, @ProductDescription, @Created_at, @IsDelete )";
+        string query = "INSERT INTO Product ( ProductName, ProductDescription, ProductPrice, Created_at, IsDelete)  VALUES ( @ProductName, @ProductDescription, @ProductPrice, @Created_at, @IsDelete )";
 
         var myanmarDatetime = TimeZoneInfo.FindSystemTimeZoneById("Myanmar Standard Time");
         var myanmarTime = TimeZoneInfo.ConvertTime(DateTime.UtcNow, myanmarDatetime);
@@ -26,6 +26,7 @@ public class SQLDataAccess : ISQLDataAccess
         var obj = new{
             ProductName = product.ProductName,
             ProductDescription = product.ProductDescription,
+            ProductPrice = product.ProductPrice,
             Created_at = myanmarTime,
             IsDelete = false
         };
@@ -110,12 +111,12 @@ public class SQLDataAccess : ISQLDataAccess
     {
         using IDbConnection dbConnection= new SqlConnection(_configuration.GetConnectionString("Default"));
         
-        string query ="UPDATE Product SET ProductName=@ProductName,ProductDescription=@ProductDescription,Updated_at=@Updated_at WHERE Id=@Id and IsDelete=0";
+        string query ="UPDATE Product SET ProductName=@ProductName,ProductDescription=@ProductDescription,ProductPrice=@ProductPrice, Updated_at=@Updated_at WHERE Id=@Id and IsDelete=0";
 
         var myanmarDatetime = TimeZoneInfo.FindSystemTimeZoneById("Myanmar Standard Time");
         var myanmarTime = TimeZoneInfo.ConvertTime(DateTime.UtcNow, myanmarDatetime);
 
-        var obj = new { ProductName = product.ProductName, ProductDescription = product.ProductDescription, Updated_at = myanmarTime, Id = product.Id};
+        var obj = new { ProductName = product.ProductName, ProductDescription = product.ProductDescription, ProductPrice = product.ProductPrice, Updated_at = myanmarTime, Id = product.Id};
 
         var queryData = await dbConnection.ExecuteAsync(query,obj);
 
