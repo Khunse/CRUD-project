@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IPAserver")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11bac65528fa02a1789f0d2a245108d2ee2da708")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e2d4dcb7446a11cd0b5d9f1a3d6a07e7dc8a789")]
 [assembly: System.Reflection.AssemblyProductAttribute("IPAserver")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IPAserver")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
