@@ -54,4 +54,4 @@ D:\assigments\IPAserver\bin\Debug\net8.0\dist\assets\primeicons-MpK4pl85.ttf
 D:\assigments\IPAserver\bin\Debug\net8.0\dist\assets\primeicons-WjwUDZjB.woff
 D:\assigments\IPAserver\bin\Debug\net8.0\dist\index.html
 D:\assigments\IPAserver\obj\Debug\net8.0\IPAserver.sourcelink.json
-D:\assigments\IPAserver\bin\Debug\net8.0\dist\assets\index-CB1WZBEg.js
+d:\assigments\IPAserver\bin\Debug\net8.0\dist\assets\index-CNrrrSKP.js

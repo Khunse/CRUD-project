@@ -19,10 +19,14 @@ public class SQLDataAccess : ISQLDataAccess
         using IDbConnection dbConnection= new SqlConnection(_configuration.GetConnectionString("Default"));
 
         string query = "INSERT INTO Product ( ProductName, ProductDescription,Created_at,IsDelete)  VALUES ( @ProductName, @ProductDescription, @Created_at, @IsDelete )";
+
+        var myanmarDatetime = TimeZoneInfo.FindSystemTimeZoneById("Myanmar Standard Time");
+        var myanmarTime = TimeZoneInfo.ConvertTime(DateTime.UtcNow, myanmarDatetime);
+
         var obj = new{
             ProductName = product.ProductName,
             ProductDescription = product.ProductDescription,
-            Created_at = DateTime.Now,
+            Created_at = myanmarTime,
             IsDelete = false
         };
 
@@ -73,7 +77,10 @@ public class SQLDataAccess : ISQLDataAccess
 
         string query = "UPDATE Product SET IsDelete=1, Updated_at = @Updated_at WHERE Id=@Id and IsDelete=0";
 
-        var obj = new { Id = id, Updated_at = DateTime.Now};
+        var myanmarDatetime = TimeZoneInfo.FindSystemTimeZoneById("Myanmar Standard Time");
+        var myanmarTime = TimeZoneInfo.ConvertTime(DateTime.UtcNow, myanmarDatetime);
+        
+        var obj = new { Id = id, Updated_at = myanmarTime };
 
         var queryData = await dbConnection.ExecuteAsync(query,obj);
 
@@ -88,7 +95,10 @@ public class SQLDataAccess : ISQLDataAccess
         
         string query ="UPDATE Product SET ProductName=@ProductName,ProductDescription=@ProductDescription,Updated_at=@Updated_at WHERE Id=@Id and IsDelete=0";
 
-        var obj = new { ProductName = product.ProductName, ProductDescription = product.ProductDescription, Updated_at = DateTime.Now, Id = product.Id};
+        var myanmarDatetime = TimeZoneInfo.FindSystemTimeZoneById("Myanmar Standard Time");
+        var myanmarTime = TimeZoneInfo.ConvertTime(DateTime.UtcNow, myanmarDatetime);
+
+        var obj = new { ProductName = product.ProductName, ProductDescription = product.ProductDescription, Updated_at = myanmarTime, Id = product.Id};
 
         var queryData = await dbConnection.ExecuteAsync(query,obj);
 

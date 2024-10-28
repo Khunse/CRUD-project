@@ -29,7 +29,7 @@ select TABLE_NAME from INFORMATION_SCHEMA.TABLES where TABLE_TYPE='BASE TYPE';
 
 docker run -d -p 5000:5000 --name my-app --network crudapp-network myappv2
 
-docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Khunaung123!" -e "MSSQL_PID=Express" -p 1437:1433 --name my-mssql -v /d/assigments/IPAserver/sql-scripts:/sql-scripts -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Khunaung123!" -e "MSSQL_PID=Express" -p 1437:1433 --name my-mssql -v /home/ec2-user/CRUD-project/sql-scripts:/sql-scripts -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu
 
 docker exec -it 39d8 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Khunaung123!
 
